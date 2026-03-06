@@ -102,8 +102,9 @@ export default function InvoiceForm({
                   type="number"
                   min="0"
                   max="100"
-                  value={invoiceData.taxRate}
-                  onChange={(e) => handleInvoiceChange("taxRate", Number.parseFloat(e.target.value) || 0)}
+                  value={invoiceData.taxRate || ""}
+                  onChange={(e) => handleInvoiceChange("taxRate", e.target.value === "" ? 0 : Number.parseFloat(e.target.value))}
+                  placeholder=""
                 />
               </div>
               <div>
@@ -131,8 +132,8 @@ export default function InvoiceForm({
                     type="number"
                     min="0"
                     step={invoiceData.discountType === "percentage" ? "0.01" : "0.01"}
-                    value={invoiceData.discountValue}
-                    onChange={(e) => handleInvoiceChange("discountValue", Number.parseFloat(e.target.value) || 0)}
+                    value={invoiceData.discountValue || ""}
+                    onChange={(e) => handleInvoiceChange("discountValue", e.target.value === "" ? 0 : Number.parseFloat(e.target.value))}
                     placeholder={invoiceData.discountType === "percentage" ? "%" : invoiceData.currency}
                     className="w-full"
                   />
@@ -250,8 +251,8 @@ export default function InvoiceForm({
                     id={`quantity-${item.id}`}
                     type="number"
                     min="1"
-                    value={item.quantity}
-                    onChange={(e) => handleItemChange(item.id, "quantity", Number.parseInt(e.target.value) || 0)}
+                    value={item.quantity || ""}
+                    onChange={(e) => handleItemChange(item.id, "quantity", e.target.value === "" ? 0 : Number.parseInt(e.target.value))}
                   />
                 </div>
                 <div className="sm:col-span-3">
@@ -261,8 +262,8 @@ export default function InvoiceForm({
                     type="number"
                     min="0"
                     step="0.01"
-                    value={item.price}
-                    onChange={(e) => handleItemChange(item.id, "price", Number.parseFloat(e.target.value) || 0)}
+                    value={item.price || ""}
+                    onChange={(e) => handleItemChange(item.id, "price", e.target.value === "" ? 0 : Number.parseFloat(e.target.value))}
                   />
                 </div>
                 <div className="sm:col-span-3">
@@ -293,9 +294,9 @@ export default function InvoiceForm({
                       type="number"
                       min="0.000001"
                       step="0.000001"
-                      value={item.exchangeRate}
+                      value={item.exchangeRate || ""}
                       onChange={(e) =>
-                        handleItemChange(item.id, "exchangeRate", Number.parseFloat(e.target.value) || 0)
+                        handleItemChange(item.id, "exchangeRate", e.target.value === "" ? 0 : Number.parseFloat(e.target.value))
                       }
                     />
                   </div>
@@ -340,8 +341,8 @@ export default function InvoiceForm({
                     type="number"
                     min="0"
                     step={item.discountType === "percentage" ? "0.01" : "0.01"}
-                    value={item.discountValue}
-                    onChange={(e) => handleItemChange(item.id, "discountValue", Number.parseFloat(e.target.value) || 0)}
+                    value={item.discountValue || ""}
+                    onChange={(e) => handleItemChange(item.id, "discountValue", e.target.value === "" ? 0 : Number.parseFloat(e.target.value))}
                     placeholder={item.discountType === "percentage" ? "%" : item.currency}
                     className="w-full"
                   />

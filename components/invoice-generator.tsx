@@ -188,9 +188,15 @@ export default function InvoiceGenerator() {
         scale: 2,
         useCORS: true,
         logging: false,
+        allowTaint: true,
+        backgroundColor: "#ffffff",
+        windowWidth: 1200,
+        windowHeight: 1700,
+        scrollX: 0,
+        scrollY: 0,
       })
 
-      const imgData = canvas.toDataURL("image/png")
+      const imgData = canvas.toDataURL("image/png", 1.0)
       const pdf = new jsPDF({
         orientation: "portrait",
         unit: "mm",
