@@ -7,9 +7,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Invoice Generator",
-  description: "Generate professional invoices easily",
-    generator: 'v0.app'
+  title: "Musasa Travel & Tours Invoice Generator",
+  description: "Generate professional Musasa Travel & Tours invoices easily",
+    generator: 'v0.dev'
 }
 
 export default function RootLayout({
