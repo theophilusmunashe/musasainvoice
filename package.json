@@ -9,7 +9,6 @@
     "start": "next start"
   },
   "dependencies": {
-    "@next/swc-win32-x64-msvc": "^16.1.6",
     "@radix-ui/react-checkbox": "^1.1.1",
     "@radix-ui/react-dialog": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.1",
